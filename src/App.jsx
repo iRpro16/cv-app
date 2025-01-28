@@ -1,35 +1,85 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
+import {
+  defaultEmployments, 
+  defaultSchools, 
+  defaultSkills, 
+  defaultLanguages
+} from "./data/defaults.js"
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [firstName, setFirstName] = useState("Isidoro");
+  const [lastName, setLastName] = useState("Rumeo");
+  const [jobRole, setJobRole] = useState("Economics Undergraduate");
+  const [email, setEmail] = useState("rumeoisidoro16@gmail.com");
+  const [phone, setPhone] = useState("123-456-7890");
+  const [address, setAddress] = useState("Caracas, Venezuela");
+  const [portfolio, setPortfolio] = useState("https://github.com/iRpro16");;
+  const [about, setAbout] = useState(
+    "An economics undergraduate dedicated to learning programming."
+  );
+  const [profilePic, setProfilePic] = useState("/wedding-photo.jpg");
+
+  const [employments, setEmployments] = useState(defaultEmployments);
+  const [skills, setSkills] = useState(defaultSkills);
+  const [schools, setSchools] = useState(defaultSchools);
+  const [languages, setLanguages] = useState(defaultLanguages);
+
+  const modifiers = {
+    handleFirstNameChange: (name) => {
+      setFirstName(name.trim());
+    },
+    handleLastNameChange: (name) => {
+      setLastName(name.trim());
+    },
+    handleJobRoleChange: (role) => {
+      setJobRole(role.trim());
+    },
+    handleEmailChange: (email) => {
+      setEmail(email.trim());
+    },
+    handlePhoneChange: (phoneNumber) => {
+      setPhone(phoneNumber.trim());
+    },
+    handleAddressChange: (address) => {
+      setAddress(address.trim());
+    },
+    handlePortfolioChange: (url) => {
+      setPortfolio(url.trim());
+    },
+    handleAboutChange: (desc) => {
+      setAbout(desc.trim());
+    },
+    handleProfilePicChange: (image) => {
+      if (!image || !image.type.startsWith("image/")) return;
+
+      const url = URL.createObjectURL(image);
+      setProfilePic(url);
+    },
+  };
+
+  const data = {
+    firstName,
+    lastName,
+    jobRole,
+    email,
+    phone,
+    address,
+    portfolio,
+    about,
+    profilePic,
+    employments,
+    skills,
+    schools,
+    languages
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    
     </>
   )
 }
 
-export default App
+export default App;
