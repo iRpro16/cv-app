@@ -1,12 +1,17 @@
-import { useState } from 'react'
-import './App.css'
+import { Printer } from 'lucide-react';
+import { useState } from 'react';
+import "../src/App.css";
 
 import {
   defaultEmployments, 
   defaultSchools, 
   defaultSkills, 
   defaultLanguages
-} from "./data/defaults.js"
+} from "./data/defaults.js";
+
+import Editor from './components/Editor.jsx';
+import Preview from './components/Preview.jsx';
+import getInitials from './utils/intials.js';
 
 function App() {
   const [firstName, setFirstName] = useState("Isidoro");
@@ -19,7 +24,8 @@ function App() {
   const [about, setAbout] = useState(
     "An economics undergraduate dedicated to learning programming."
   );
-  const [profilePic, setProfilePic] = useState("/wedding-photo.jpg");
+
+  const initials = getInitials(firstName, lastName);
 
   const [employments, setEmployments] = useState(defaultEmployments);
   const [skills, setSkills] = useState(defaultSkills);
@@ -51,12 +57,6 @@ function App() {
     handleAboutChange: (desc) => {
       setAbout(desc.trim());
     },
-    handleProfilePicChange: (image) => {
-      if (!image || !image.type.startsWith("image/")) return;
-
-      const url = URL.createObjectURL(image);
-      setProfilePic(url);
-    },
   };
 
   const data = {
@@ -68,7 +68,7 @@ function App() {
     address,
     portfolio,
     about,
-    profilePic,
+    initials,
     employments,
     skills,
     schools,
@@ -77,9 +77,19 @@ function App() {
 
   return (
     <>
-    
+      <Editor 
+        modifiers={{
+          ...modifiers,
+          setEmployments,
+          setSkills,
+          setSchools,
+          setLanguages,
+        }}
+        data={data}
+      />
+      <Preview data={data} />
     </>
-  )
+  );
 }
 
 export default App;

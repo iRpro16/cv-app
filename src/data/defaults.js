@@ -45,11 +45,18 @@ const defaultSkills = [
 const defaultSchools = [
     {
         id: crypto.randomUUID(),
-        school: "Concordia University",
+        schoolName: "Concordia University",
         degree: "Bachelor of Arts in Economics",
         startDate: "Sep 2021",
         endDate: "July 2025"
-    }
+    },
+    {
+        id: crypto.randomUUID(),
+        schoolName: "Concordia University",
+        degree: "Bachelor of Arts in Economics",
+        startDate: "Sep 2021",
+        endDate: "July 2025"
+    },
 ]
 
 const defaultLanguages = [
