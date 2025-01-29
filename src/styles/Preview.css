@@ -12,7 +12,7 @@
     flex-direction: column;
     align-items: center;
     width: 40%;
-    height: 100%;
+    min-height: 100%;
     background-color: #004282;
 }
 
@@ -30,7 +30,7 @@
 }
 
 /* contact cont */
-.contact-cont, .education-cont, .skills-cont {
+.contact-cont, .education-cont, .skills-cont, .languages-cont {
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -103,4 +103,28 @@
 .skill > p {
     padding: 0;
     margin: 0;
+}
+
+/* languages cont */
+.languages-cont > h2 {
+    padding: 0;
+    margin-top: 20px;
+    width: 100%;
+    border-bottom: 2px solid white;
+}
+
+.language {
+    display: flex;
+    align-items: center;
+}
+
+.language > p {
+    margin: 0;
+    padding: 0;
+}
+
+/* main content */
+.main-content {
+    width: 60%;
+    min-height: 100%;
 }

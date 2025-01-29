@@ -1,4 +1,3 @@
-import { Printer } from 'lucide-react';
 import { useState } from 'react';
 import "../src/App.css";
 
@@ -24,7 +23,6 @@ function App() {
   const [about, setAbout] = useState(
     "An economics undergraduate dedicated to learning programming."
   );
-
   const initials = getInitials(firstName, lastName);
 
   const [employments, setEmployments] = useState(defaultEmployments);
@@ -85,6 +83,7 @@ function App() {
           setSchools,
           setLanguages,
         }}
+
         data={data}
       />
       <Preview data={data} />

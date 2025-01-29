@@ -70,6 +70,24 @@ export default function Preview({ data }) {
                         })}
                     </div>
 
+                    {/* Languages container*/}
+                    <div className="languages-cont">
+                        <h2>Languages</h2>
+                        <div className="languages">
+                            {data.languages.map((language) => {
+                                return (
+                                    <div key={language.id} className="language">
+                                        <Dot />
+                                        <p>{language.language}</p>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="main-content">
+
                 </div>
             </div>
         </div>

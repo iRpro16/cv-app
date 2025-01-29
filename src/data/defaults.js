@@ -75,7 +75,7 @@ const defaultLanguages = [
     {
         id: crypto.randomUUID(),
         language: "Italian"
-    }
+    },
 ]
 
 export { defaultEmployments, defaultSkills, defaultSchools, defaultLanguages};
