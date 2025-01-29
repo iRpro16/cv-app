@@ -53,7 +53,7 @@ function App() {
       setPortfolio(url.trim());
     },
     handleAboutChange: (desc) => {
-      setAbout(desc.trim());
+      setAbout(desc);
     },
   };
 

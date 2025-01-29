@@ -87,7 +87,15 @@ export default function Preview({ data }) {
                 </div>
 
                 <div className="main-content">
+                    <div className="name-occupation-cont">
+                        <p>{data.firstName} {data.lastName}</p>
+                        <p>{data.jobRole}</p>
+                    </div>
 
+                    <div className="summary-cont">
+                        <h2>Summary</h2>
+                        <p>{data.about}</p>
+                    </div>
                 </div>
             </div>
         </div>

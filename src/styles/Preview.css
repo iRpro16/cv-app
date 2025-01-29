@@ -125,6 +125,41 @@
 
 /* main content */
 .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 60%;
     min-height: 100%;
+}
+
+/* name occupation */
+.name-occupation-cont {
+    display: flex;
+    flex-direction: column;
+    height: 105px;
+    width: 80%;
+    justify-content: center;
+    margin: 30px;
+}
+
+.name-occupation-cont p:first-child {
+    padding: 0;
+    margin: 0;
+    font-size: 3em;
+}
+
+.name-occupation-cont p:nth-child(2) {
+    padding: 0;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+/* summary */
+.summary-cont {
+    width: 90%;
+}
+.summary-cont > h2 {
+    padding: 0;
+    margin: 0;
+    width: 100%;
 }
