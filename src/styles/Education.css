@@ -1,0 +1,28 @@
+#education-section {
+    width: 90%;
+}
+
+/* section */
+section {
+    height: 40%;
+}
+/* education container side bar */
+.education-cont-side {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.school-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.school-cont > div {
+    display: flex;
+    gap: 10px;
+}

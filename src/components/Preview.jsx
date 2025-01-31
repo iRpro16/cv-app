@@ -96,6 +96,29 @@ export default function Preview({ data }) {
                         <h2>Summary</h2>
                         <p>{data.about}</p>
                     </div>
+
+                    <div className="work-experience-cont">
+                        <h2>Work experience</h2>
+                        <div className="employments-cont">
+                            {data.employments.map((employment) => {
+                                return (
+                                    <div key={employment.id} className="employment">
+                                        <div className="employment-header">
+                                            <div>
+                                                <p>{employment.employer}</p>
+                                                <p>{employment.role}</p>
+                                            </div>
+                                            <p>{employment.startDate} - {employment.endDate}</p>
+                                        </div>
+                                        <p>{employment.description}</p>
+                                    </div>
+                                )
+                            })}
+                        </div>
+
+
+                    </div>
+
                 </div>
             </div>
         </div>

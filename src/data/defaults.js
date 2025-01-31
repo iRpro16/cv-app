@@ -52,10 +52,10 @@ const defaultSchools = [
     },
     {
         id: crypto.randomUUID(),
-        schoolName: "Concordia University",
-        degree: "Bachelor of Arts in Economics",
-        startDate: "Sep 2021",
-        endDate: "July 2025"
+        schoolName: "Vanier College",
+        degree: "Commerce",
+        startDate: "Sep 2019",
+        endDate: "May 2021"
     },
 ]
 

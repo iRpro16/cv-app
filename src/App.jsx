@@ -38,7 +38,7 @@ function App() {
       setLastName(name.trim());
     },
     handleJobRoleChange: (role) => {
-      setJobRole(role.trim());
+      setJobRole(role);
     },
     handleEmailChange: (email) => {
       setEmail(email.trim());
@@ -47,7 +47,7 @@ function App() {
       setPhone(phoneNumber.trim());
     },
     handleAddressChange: (address) => {
-      setAddress(address.trim());
+      setAddress(address);
     },
     handlePortfolioChange: (url) => {
       setPortfolio(url.trim());

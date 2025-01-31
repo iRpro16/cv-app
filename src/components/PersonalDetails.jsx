@@ -35,6 +35,16 @@ function PersonalDetailsForm( {modifiers, data} ) {
             </div>
 
             <div>
+                <label>Profession: </label>
+                <input 
+                    type="text"
+                    name="jobRole"
+                    value={data.jobRole}
+                    onInput={(e) => modifiers.handleJobRoleChange(e.target.value)}
+                />
+            </div>
+
+            <div>
                 <label>Phone Number: </label>
                 <input 
                     type="text"
@@ -82,7 +92,6 @@ function PersonalDetailsForm( {modifiers, data} ) {
                 onInput={(e) => modifiers.handleAboutChange(e.target.value)}
                 className="text-area"
                 ></textarea>
-
             </div>
         </div>
     )
