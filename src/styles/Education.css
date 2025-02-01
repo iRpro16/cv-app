@@ -13,6 +13,12 @@ section {
     gap: 10px;
 }
 
+.add-education-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .school-cont {
     display: flex;
     align-items: center;
@@ -25,4 +31,21 @@ section {
 .school-cont > div {
     display: flex;
     gap: 10px;
+}
+
+/* buttons */
+.edit-btn:hover {
+    cursor: pointer;
+    color: lightgray;
+}
+
+.delete-btn:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.add-education {
+    height: 40px;
+    width: 40px;
+    font-size: 1.5em;
 }
