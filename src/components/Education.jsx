@@ -29,7 +29,7 @@ function EducationComponent({ modifiers, data }) {
 
     return (
         <div className="education-cont-side">
-            {data.schools.map((school) => {
+            {data.schools.map(school => {
                 return (
                     <div key={school.id} className="school-cont">
                         { activeIndex === school.id ? (
@@ -60,7 +60,7 @@ function EducationComponent({ modifiers, data }) {
             })}
 
             {
-                <div className="add-employment-section">
+                <div className="add-education-section">
                     {formActive ? (
                         <AddEducationForm 
                             modifiers={modifiers}
@@ -68,9 +68,9 @@ function EducationComponent({ modifiers, data }) {
                             setFormState={setFormActive}
                             />
                     ) : (
-                        <div className="add-employment" onClick={() => setFormActive(true)}>
+                        <div className="add-education" onClick={() => setFormActive(true)}>
                             <CirclePlus />
-                            <p>Add Employment</p>
+                            <p>Add Education</p>
                         </div>
                     )}
                 </div>

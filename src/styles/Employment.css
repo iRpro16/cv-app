@@ -1,15 +1,39 @@
-#education-section {
+#work-experience-section {
     width: 90%;
 }
 
-/* education container side bar */
-.education-cont-side {
+/* employment header */
+.employment-header {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    justify-content: space-between;
 }
 
-.school-cont {
+.employment-header > div > p:first-child {
+    font-weight: bolder;
+    font-size: 1.2em;
+}
+
+.employment-header > div > p {
+    padding: 0;
+    margin: 0;
+
+}
+
+.employment-header > p {
+    padding: 0;
+    margin: 0;
+}
+
+
+.employments-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* employment cont */
+.employment-cont {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,45 +42,29 @@
     border-radius: 10px;
 }
 
-
-.school-cont > div {
+.employment-cont > div {
     display: flex;
     gap: 10px;
 }
 
-.school-cont > form > div {
-    display: flex;
-    flex-direction: column;
-}
-
-.school-cont > form {
+.employment-cont > form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-
-/* buttons */
-.edit-btn:hover {
-    cursor: pointer;
-    color: lightgray;
-}
-
-.delete-btn:hover {
-    cursor: pointer;
-    color: red;
-}
-
-.add-school {
+.employment-cont > form > div {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid black;
-    border-radius: 10px;
+    flex-direction: column;
+}
+
+.employment-cont-side {
+    display: flex;
+    flex-direction: column;
     gap: 10px;
 }
 
-.add-education {
+.add-employment {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,7 +74,8 @@
     padding: 5px;
 }
 
-.add-school-form {
+/* employment form */
+.add-employments-form {
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -75,20 +84,8 @@
     gap: 10px;
 }
 
-.add-school-form > div {
+.add-employments-form > div {
     display: flex;
     flex-direction: column;
     width: 70%;
-}
-
-.buttons-cont-add {
-    display: flex;
-    justify-content: space-between;
-    width: 70%;
-
-}
-
-.buttons-cont-edit {
-    display: flex;
-    justify-content: space-between;
 }

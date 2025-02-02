@@ -1,18 +1,13 @@
 #personal-details-section {
     width: 90%;
 }
-
-/* section */
-section {
-    height: 40%;
-}
-
 /* form */
 #form {
     display: grid;
     height: 70%;
     grid-template-rows: repeat(5, 100pxfr);
     grid-template-columns: repeat(2, 1fr);
+    row-gap: 15px;
 }
 
 #form > div {

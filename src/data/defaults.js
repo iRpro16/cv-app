@@ -5,7 +5,6 @@ const defaultEmployments = [
         employer: "San Gennaro",
         startDate: "Nov 2021",
         endDate: "Present",
-        city: "Montreal",
         description: "Serve coffees to clients and providing excellent service."
     },
     {
@@ -14,7 +13,6 @@ const defaultEmployments = [
         employer: "IGA",
         startDate: "Nov 2019",
         endDate: "Aug 2020",
-        city: "Montreal",
         description: "Put the groceries in the bag"
     },
 ];

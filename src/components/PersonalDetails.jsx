@@ -3,7 +3,6 @@ import "../styles/PersonalDetails.css";
 export default function PersonalDetailsSection( {modifiers, data} ) {
     return (
         <section id="personal-details-section">
-            <hr />
             <h2>Personal Details </h2>
             <hr />
             <PersonalDetailsForm modifiers={modifiers} data={data}/>
@@ -88,9 +87,9 @@ function PersonalDetailsForm( {modifiers, data} ) {
             <div className="about-area">
                 <label>Summary: </label>
                 <textarea 
-                value={data.about} 
-                onInput={(e) => modifiers.handleAboutChange(e.target.value)}
-                className="text-area"
+                    value={data.about} 
+                    onInput={(e) => modifiers.handleAboutChange(e.target.value)}
+                    className="text-area"
                 ></textarea>
             </div>
         </div>

@@ -1,24 +1,25 @@
 import { useState, useRef } from "react";
 import handleObjChange from "../utils/handleObjectChange";
 
-function EditEducationForm({ data, modifiers, onChange, schoolObj }) {
-    let schoolName = schoolObj.schoolName;
-    let schoolDegree = schoolObj.degree;
-    let startDate = schoolObj.startDate;
-    let endDate = schoolObj.endDate;
-    const prevState = useRef(data.schools);
+function EditEmploymentForm( {modifiers, data, onChange, employmentObj }) {
+    let employer = employmentObj.employer;
+    let role = employmentObj.role;
+    let startDate = employmentObj.startDate;
+    let endDate = employmentObj.endDate;
+    let description = employmentObj.description;
+    const prevState = useRef(data.employments);
 
     const handleCancel = () => {
-        modifiers.setSchools(prevState.current);
+        modifiers.setEmployments(prevState.current);
         onChange(0);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        prevState.current = data.schools;
+        prevState.current = data.employments;
         onChange(0);
     };
-    
+
     return (
         <form 
             onSubmit={handleSubmit}
@@ -27,42 +28,42 @@ function EditEducationForm({ data, modifiers, onChange, schoolObj }) {
             }} 
         >
             <div>
-                <label htmlFor="school-name-edit">School Name: </label>
+                <label htmlFor="employer-edit">Employer: </label>
                 <input 
                     type="text"
                     value={
-                        data.schools.find(el => el.schoolName === schoolName).schoolName
+                        data.employments.find(el => el.employer === employer).employer
                     }
                     onInput={(e) => {
-                        const updatedSchools = handleObjChange(
-                            data.schools,
-                            'schoolName',
-                            schoolName,
+                        const updatedEmployment = handleObjChange(
+                            data.employments,
+                            'employer',
+                            employer,
                             e.target.value,
                         );
-                        modifiers.setSchools(updatedSchools);
+                        modifiers.setEmployments(updatedEmployment);
                     }}
-                    id="school-name-edit"
+                    id="employer-edit"
                 />
             </div>
 
             <div>
-                <label htmlFor="degree-edit">Degree: </label>
+                <label htmlFor="role-edit">Role: </label>
                 <input 
                     type="text"
                     value={
-                        data.schools.find(el => el.degree === schoolDegree).degree
+                        data.employments.find(el => el.role === role).role
                     }
                     onInput={(e) => {
-                        const updatedSchools = handleObjChange(
-                            data.schools,
-                            'degree',
-                            schoolDegree,
+                        const updatedEmployment = handleObjChange(
+                            data.employments,
+                            'role',
+                            role,
                             e.target.value,
                         );
-                        modifiers.setSchools(updatedSchools);
+                        modifiers.setEmployments(updatedEmployment);
                     }}
-                    id="degree-edit"
+                    id="role-edit"
                 />
             </div>
 
@@ -71,16 +72,16 @@ function EditEducationForm({ data, modifiers, onChange, schoolObj }) {
                 <input 
                     type="text"
                     value={
-                        data.schools.find(el => el.startDate === startDate).startDate
+                        data.employments.find(el => el.startDate === startDate).startDate
                     }
                     onInput={(e) => {
-                        const updatedSchools = handleObjChange(
-                            data.schools,
+                        const updatedEmployment = handleObjChange(
+                            data.employments,
                             'startDate',
                             startDate,
                             e.target.value,
                         );
-                        modifiers.setSchools(updatedSchools);
+                        modifiers.setEmployments(updatedEmployment);
                     }}
                     id="start-date-edit"
                 />
@@ -91,19 +92,40 @@ function EditEducationForm({ data, modifiers, onChange, schoolObj }) {
                 <input 
                     type="text"
                     value={
-                        data.schools.find(el => el.endDate === endDate).endDate
+                        data.employments.find(el => el.endDate === endDate).endDate
                     }
                     onInput={(e) => {
-                        const updatedSchools = handleObjChange(
-                            data.schools,
+                        const updatedEmployment = handleObjChange(
+                            data.employments,
                             'endDate',
                             endDate,
                             e.target.value,
                         );
-                        modifiers.setSchools(updatedSchools);
+                        modifiers.setEmployments(updatedEmployment);
                     }}
                     id="end-date-edit"
                 />
+            </div>
+
+            <div>
+                <label htmlFor="description-edit">Description: </label>
+                <textarea
+                    value={
+                        data.employments.find(el => el.description === description).description
+                    }
+                    onInput={(e) => {
+                        const updatedEmployment =handleObjChange(
+                            data.employments,
+                            'description',
+                            description,
+                            e.target.value,
+                        );
+                        modifiers.setEmployments(updatedEmployment);
+                    }}
+                    id="desciption-edit"
+                >
+                
+                </textarea> 
             </div>
 
             <section className="buttons-cont-edit">
@@ -115,26 +137,27 @@ function EditEducationForm({ data, modifiers, onChange, schoolObj }) {
     )
 }
 
-function AddEducationForm({ modifiers, data, setFormState }) {
+function AddEmploymentForm({ modifiers, data, setFormState }) {
     const [newObject, setNewObject] = useState({
         id: crypto.randomUUID(),
-        schoolName: "",
-        degree: "",
+        employer: "",
+        role: "",
         startDate: "",
-        endDate: ""
+        endDate: "",
+        description: ""
     })
 
-    const handleSchoolNameChange = (e) => {
+    const handleEmployerChange = (e) => {
         setNewObject({
             ...newObject,
-            schoolName: e.target.value
+            employer: e.target.value
         });
     };
 
-    const handleDegreeChange = (e) => {
+    const handleRoleChange = (e) => {
         setNewObject({
             ...newObject,
-            degree: e.target.value
+            role: e.target.value
         });
     };
 
@@ -152,6 +175,13 @@ function AddEducationForm({ modifiers, data, setFormState }) {
         });
     };
 
+    const handleDescriptionChange = (e) => {
+        setNewObject({
+            ...newObject,
+            description: e.target.value
+        })
+    }
+
     const handleCancel = () => {
         setFormState(false);
     }
@@ -160,9 +190,9 @@ function AddEducationForm({ modifiers, data, setFormState }) {
         e.preventDefault();
 
         // push object
-        let schoolsArray = [...data.schools]
-        schoolsArray.push(newObject);
-        modifiers.setSchools(schoolsArray);
+        let employmentsArray = [...data.employments]
+        employmentsArray.push(newObject);
+        modifiers.setEmployments(employmentsArray);
         
         // close form
         setFormState(false);
@@ -171,29 +201,29 @@ function AddEducationForm({ modifiers, data, setFormState }) {
     return (
         <form
             onSubmit={handleSubmit} 
-            className="add-school-form"
+            className="add-employments-form"
             onKeyDown={e => {
                 if(e.key === "Enter") e.preventDefault();
             }}
             >
 
             <div>
-                <label htmlFor="school-name-add">School Name: </label>
+                <label htmlFor="employer-add">Employer: </label>
                 <input 
                     type="text" 
-                    value={newObject.schoolName} 
-                    onInput={handleSchoolNameChange}
-                    id="school-name-add"
+                    value={newObject.employer} 
+                    onInput={handleEmployerChange}
+                    id="employer-add"
                 />
             </div>
 
             <div>
-                <label htmlFor="degree-add">Degree: </label>
+                <label htmlFor="role-add">Role: </label>
                 <input 
                     type="text" 
-                    value={newObject.degree} 
-                    onInput={handleDegreeChange}
-                    id="degree-add"
+                    value={newObject.role} 
+                    onInput={handleRoleChange}
+                    id="role-add"
                 />
             </div>
 
@@ -217,6 +247,16 @@ function AddEducationForm({ modifiers, data, setFormState }) {
                 />
             </div>
 
+            <div>
+                <label htmlFor="description-add">Description: </label>
+                <textarea 
+                    value={newObject.description}
+                    onInput={handleDescriptionChange}
+                    id="description-add"
+                >
+                </textarea>
+            </div>
+
             <section className="buttons-cont-add">
                 <button className="close-btn-edu-form" onClick={handleCancel}>Close</button>
                 <button type="submit" className="submit-btn-edu-form">Submit</button>
@@ -227,6 +267,6 @@ function AddEducationForm({ modifiers, data, setFormState }) {
 }
 
 export {
-    EditEducationForm,
-    AddEducationForm
+    EditEmploymentForm,
+    AddEmploymentForm
 }
