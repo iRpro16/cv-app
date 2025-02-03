@@ -1,5 +1,16 @@
+:root {
+    --box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+/* work experience section */
 #work-experience-section {
     width: 90%;
+}
+
+#work-experience-section > h2{
+    font-family: "Lexend", serif;
+    font-size: 1.7em;
+
 }
 
 /* employment header */
@@ -24,7 +35,7 @@
     margin: 0;
 }
 
-
+/* employments cont */
 .employments-cont {
     display: flex;
     flex-direction: column;
@@ -32,12 +43,11 @@
     margin-top: 15px;
 }
 
-/* employment cont */
 .employment-cont {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 2px solid black;
+    box-shadow: var(--box-shadow);
     padding: 10px;
     border-radius: 10px;
 }
@@ -47,9 +57,16 @@
     gap: 10px;
 }
 
+.employment-cont >  p {
+    color: royalblue;
+    font-family: "Lexend", serif;
+}
+
 .employment-cont > form {
     display: flex;
     flex-direction: column;
+    color: royalblue;
+    font-family: "Lexend", serif;
     gap: 10px;
 }
 
@@ -69,9 +86,15 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    border: 2px solid black;
+    box-shadow: var(--box-shadow);
     border-radius: 10px;
     padding: 5px;
+    color: royalblue;
+    font-family: "Lexend", serif;
+}
+
+.add-employment:hover {
+    cursor: pointer;
 }
 
 /* employment form */
@@ -79,7 +102,7 @@
     display: flex;
     flex-direction: column;
     padding: 10px;
-    border: 2px solid black;
+    box-shadow: var(--box-shadow);
     border-radius: 10px;
     gap: 10px;
 }
@@ -88,4 +111,13 @@
     display: flex;
     flex-direction: column;
     width: 70%;
+}
+
+.add-employments-form > div >  label{
+    color: royalblue;
+    font-family: "Lexend", serif;;
+}
+
+.add-employments-form > div > input {
+    height: 20px;
 }

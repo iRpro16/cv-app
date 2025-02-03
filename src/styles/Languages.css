@@ -1,33 +1,35 @@
-/* :root */
+/* root */
 :root {
     --box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-/* skills section */
-#skills-section {
+/* languages section */
+#languages-section {
     width: 90%;
 }
 
-#skills-section > h2 {
+#languages-section > h2 {
     font-family: "Lexend", serif;
     font-size: 1.7em;
+
 }
 
-/* skills container */
-.skills-cont-side {
+/* language cont side */
+.languages-cont-side {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-bottom: 50px;
 }
 
-.skills-cont-side > input {
-    border: none;
+.languages-cont-side > input {
     height: 50px;
     border-radius: 10px;
+    border: none;
     box-shadow: var(--box-shadow);
 }
 
-.skills-cont-side > input:focus {
+.languages-cont-side > input:focus {
     outline: none !important;
     box-shadow: none;
     color: red;

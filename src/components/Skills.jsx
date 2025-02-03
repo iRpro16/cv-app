@@ -1,6 +1,5 @@
 import "../styles/Skills.css";
 import handleObjChange from "../utils/handleObjectChange";
-import { CirclePlus } from "lucide-react";
 
 export default function SkillsSection ({ modifiers, data }) {
     return (
