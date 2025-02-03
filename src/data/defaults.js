@@ -37,6 +37,10 @@ const defaultSkills = [
     {
         id: crypto.randomUUID(),
         skill: "Adaptable"
+    },
+    {
+        id: crypto.randomUUID(),
+        skill: "Organized"
     }
 ];
 

@@ -6,7 +6,7 @@ import { CirclePlus } from "lucide-react";
 import { EditEducationForm } from "./EducationForms";
 import { AddEducationForm } from "./EducationForms";
 
-export default function EducationSection( {modifiers, data }) {
+export default function EducationSection( {modifiers, data } ) {
     return (
         <section id="education-section">
             <hr />

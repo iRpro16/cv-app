@@ -1,0 +1,21 @@
+#skills-section {
+    width: 90%;
+}
+
+.skills-cont-side {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.skills-cont-side > input {
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.skills-cont-side > input:focus {
+    outline: none !important;
+    border: 2px solid lightblue;
+    border-color: lightblue;
+}
