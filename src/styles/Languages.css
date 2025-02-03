@@ -26,6 +26,8 @@
     height: 50px;
     border-radius: 10px;
     border: none;
+    color: royalblue;
+    padding-left: 10px;
     box-shadow: var(--box-shadow);
 }
 

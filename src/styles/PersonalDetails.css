@@ -27,12 +27,13 @@
 
 #form > div > input {
     height: 20px;
+    border: 1px solid lightgray;
     border-radius: 5px;
 }
 
 #form > div > input:focus {
     outline: none !important;
-    border: 2px solid royalblue;
+    border: 1px solid royalblue;
 }
 
 #form > div > label {
