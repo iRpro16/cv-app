@@ -13,18 +13,22 @@ To run this project locally, follow these steps:
 1. Clone the repository
 ```
 git clone [https://github.com/iRpro16/cv-app.git]
+```
 
 2. Navigate to the project directory:
 ```
 cd cv-application
+```
 
 3. Install dependencies:
 ```
 npm install
+```
 
 4. Start the development server:
 ```
 npm start
+```
 
 ## Usage
 1. Open the application in your browser at http://localhost:3000.
