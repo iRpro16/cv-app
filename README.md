@@ -43,11 +43,11 @@ npm start
 
 ## Challenges and solutions:
 ### Lifting state up
-Challenge: Getting the user input from on component to display in another component.
+Challenge: Getting the user input from on component to display in another component.\
 Solution: Lifting the state up by moving the states to the closest common parent to reflect the same changing data.
 
 ### Setting the state of nested data
-Challenge: Changing the data of object properties inside of nested data.
+Challenge: Changing the data of object properties inside of nested data.\
 Solution: Creating a seperate function that searched for the matching object, set the property value and returned the new object.
 
 ## Future Improvements
